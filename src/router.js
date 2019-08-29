@@ -3,26 +3,16 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Dashboard from '@/views/Dashboard'
 import Login from "@/views/Account/Login.vue";
+import Store from './store';
 
-// const ifNotAuthenticated = (to, from, next) => {
-//   if (!store.getters.isAuthenticated) {
-//     next()
-//     return
-//   }
-//   next('/')
-// }
 
-// const ifAuthenticated = (to, from, next) => {
-//   if (store.getters.isAuthenticated) {
-//     next()
-//     return
-//   }
-//   next('/login')
-// }
+
+
+
 
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -49,6 +39,26 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '*',
+      redirect: '/login'
     }
   ]
 })
+
+const openRoutes = ["login", "register"]
+
+router.beforeEach((to, from, next) => {
+  // Store.dispatch('fetchAccessToken');
+  Store.dispatch('fetchAccessToken')
+  if (openRoutes.includes(to.name)) {
+    next()
+  } else if (Store.state.accessToken) {
+    next()
+  } else {
+    next("/login")
+  }
+});
+
+export default router;
