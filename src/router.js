@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Dashboard from '@/views/Dashboard'
+import Login from "@/views/Account/Login.vue";
 
 // const ifNotAuthenticated = (to, from, next) => {
 //   if (!store.getters.isAuthenticated) {
@@ -33,8 +34,13 @@ export default new Router({
     {
       path:'/dashboard',
       name:'dashboard',
-      component:Dashboard,
+      component:Dashboard
       // beforeEnter: ifAuthenticated,
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:Login
     },
     {
       path: '/about',
