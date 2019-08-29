@@ -4,12 +4,10 @@ import Home from './views/Home.vue'
 import Dashboard from '@/views/Dashboard'
 import Login from "@/views/Account/Login.vue";
 import Register from "@/views/Account/Register.vue";
+import EmployeeList from "@/views/Employee/List.vue";
+import Profile from "@/views/Employee/Profile.vue";
 import ForgotPassword from "@/views/Account/ForgotPassword.vue";
 import Store from './store';
-
-
-
-
 
 
 Vue.use(Router)
@@ -45,6 +43,16 @@ const router =  new Router({
       component:ForgotPassword
     },
     {
+      path:'/employee-list',
+      name:'employee-list',
+      component:EmployeeList
+    },
+    {
+    path:'/profile',
+    name:'profile',
+    component:Profile
+  },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -59,7 +67,7 @@ const router =  new Router({
   ]
 })
 
-const openRoutes = ["login", "register", "forgot-password"]
+const openRoutes = ["login", "register", "forgot-password", "employee-list", "profile"]
 
 router.beforeEach((to, from, next) => {
   // Store.dispatch('fetchAccessToken');
