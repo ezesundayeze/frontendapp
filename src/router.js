@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Dashboard from '@/views/Dashboard'
 import Login from "@/views/Account/Login.vue";
+import Register from "@/views/Account/Register.vue";
+import ForgotPassword from "@/views/Account/ForgotPassword.vue";
 import Store from './store';
 
 
@@ -33,6 +35,16 @@ const router =  new Router({
       component:Login
     },
     {
+      path:'/register',
+      name:'register',
+      component:Register
+    },
+    {
+      path:'/forgot-password',
+      name:'forgot-password',
+      component:ForgotPassword
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -47,7 +59,7 @@ const router =  new Router({
   ]
 })
 
-const openRoutes = ["login", "register"]
+const openRoutes = ["login", "register", "forgot-password"]
 
 router.beforeEach((to, from, next) => {
   // Store.dispatch('fetchAccessToken');

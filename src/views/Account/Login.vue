@@ -5,7 +5,7 @@
 				<div class="container">
 					<!-- Account Logo -->
 					<div class="account-logo">
-						<a href="index.html"><img src="assets/img/logo2.png" alt="Dreamguy's Technologies"></a>
+						<router-link to="/"><img src="../../assets/logo.png" alt="Raveshift"></router-link>
 					</div>
 					<!-- /Account Logo -->
 					
@@ -26,9 +26,9 @@
 											<label>Password</label>
 										</div>
 										<div class="col-auto">
-											<a class="text-muted" href="forgot-password.html">
+											<router-link class="text-muted" to="/forgot-password">
 												Forgot password?
-											</a>
+											</router-link>
 										</div>
 									</div>
 									<input class="form-control" type="password">
@@ -37,7 +37,7 @@
 									<button class="btn btn-primary account-btn" type="submit">Login</button>
 								</div>
 								<div class="account-footer">
-									<p>Don't have an account yet? <a href="register.html">Register</a></p>
+									<p>Don't have an account yet? <router-link to="/register">Register</router-link></p>
 								</div>
 							</form>
 							<!-- /Account Form -->
