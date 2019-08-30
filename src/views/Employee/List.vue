@@ -14,7 +14,7 @@
 							<h4 class="page-title">Employee</h4>
 						</div>
 						<div class="col-auto text-right float-right ml-auto m-b-30">
-							<a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_employee"><i class="fa fa-plus"></i> Add Employee</a>
+							<router-link to="/add-employee" class="btn add-btn"><i class="fa fa-plus"></i> Add Employee</router-link>
 							<div class="view-icons">
 								<a href="employees.html" class="grid-view btn btn-link"><i class="fa fa-th"></i></a>
 								<a href="employees-list.html" class="list-view btn btn-link active"><i class="fa fa-bars"></i></a>

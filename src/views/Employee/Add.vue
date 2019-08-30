@@ -1,13 +1,20 @@
+
 <template>
-<!-- Add Employee Modal -->
-				<div id="add_employee" class="modal custom-modal fade" role="dialog">
+        <div class="main-wrapper">
+            <TopMenu/>
+            <SideBar/>
+            <!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+				<!-- Page Content -->
+                <div class="content container-fluid">
+
+				<!-- Add Employee Modal -->
+				<div id="add_employee" class="">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title">Add Employee</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
 							</div>
 							<div class="modal-body">
 								<form>
@@ -284,7 +291,8 @@
 										</table>
 									</div>
 									<div class="submit-section">
-										<button class="btn btn-primary submit-btn">Submit</button>
+										<button class="btn btn-primary submit-btn">Submit</button> &nbsp;&nbsp;
+										<button class="btn btn-primary submit-btn btn-next">Next</button>
 									</div>
 								</form>
 							</div>
@@ -292,4 +300,33 @@
 					</div>
 				</div>
 				<!-- /Add Employee Modal -->
+				</div>
+				<!-- /Page Content -->
+
+            </div>
+			<!-- /Page Wrapper -->
+        </div>
+    
 </template>
+
+<script>
+import TopMenu from "@/views/Menu/Top.vue";
+import SideBar from "@/views/Sidebar";
+
+export default {
+    name:"Dashboard",
+    components:{
+        TopMenu,
+        SideBar
+    }
+}
+</script>
+
+<style scoped>
+
+.btn-next{
+	background:#fb0091 !important;
+	border-color:#fb0091 !important;
+}
+
+</style>

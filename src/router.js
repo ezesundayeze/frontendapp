@@ -7,6 +7,12 @@ import Register from "@/views/Account/Register.vue";
 import EmployeeList from "@/views/Employee/List.vue";
 import Profile from "@/views/Employee/Profile.vue";
 import ForgotPassword from "@/views/Account/ForgotPassword.vue";
+import AddEmployee from "@/views/Employee/Add.vue";
+import EditEmployee from "@/views/Employee/Edit.vue";
+import EditBank from "@/views/Bank/Edit.vue";
+import AddBank from "@/views/Bank/Add.vue";
+
+
 import Store from './store';
 
 
@@ -48,10 +54,30 @@ const router =  new Router({
       component:EmployeeList
     },
     {
+      path:'/add-employee',
+      name:'add-employee',
+      component:AddEmployee
+    },
+    {
+      path:'/edit-employee',
+      name:'edit-employee',
+      component:EditEmployee
+    },
+    {
+      path:'/edit-bank',
+      name:'edit-bank',
+      component:EditBank
+    },
+    {
+      path:'/add-bank',
+      name:'add-bank',
+      component:AddBank
+    },
+    {
     path:'/profile',
     name:'profile',
     component:Profile
-  },
+    },
     {
       path: '/about',
       name: 'about',
@@ -67,7 +93,7 @@ const router =  new Router({
   ]
 })
 
-const openRoutes = ["login", "register", "forgot-password", "employee-list", "profile"]
+const openRoutes = ["login", "register", "forgot-password", "add-employee","edit-employee", "add-bank", "edit-bank", "profile"]
 
 router.beforeEach((to, from, next) => {
   // Store.dispatch('fetchAccessToken');
