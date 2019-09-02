@@ -11,6 +11,28 @@ import AddEmployee from "@/views/Employee/Add.vue";
 import EditEmployee from "@/views/Employee/Edit.vue";
 import EditBank from "@/views/Bank/Edit.vue";
 import AddBank from "@/views/Bank/Add.vue";
+import Bank from "@/views/Bank/index.vue";
+import EditDesignation from "@/views/Designation/Edit.vue";
+import AddDesignation from "@/views/Designation/Add.vue";
+import Designation from "@/views/Designation/index.vue";
+import EditPromotion from "@/views/Promotion/Edit.vue";
+import AddPromotion from "@/views/Promotion/Add.vue";
+import Promotion from "@/views/Promotion/index.vue";
+import AddResignation from "@/views/Resignation/Add.vue";
+import Resignation from "@/views/Resignation/index.vue";
+import EditOvertime from "@/views/Overtime/Edit.vue";
+import AddOvertime from "@/views/Overtime/Add.vue";
+import Overtime from "@/views/Overtime/index.vue";
+import EditTermination from "@/views/Termination/Edit.vue";
+import AddTermination from "@/views/Termination/Add.vue";
+import Termination from "@/views/Termination/index.vue";
+import EditDepartment from "@/views/Department/Edit.vue";
+import AddDepartment from "@/views/Department/Add.vue";
+import Department from "@/views/Department/index.vue";
+import EditLeave from "@/views/Leave/Edit.vue";
+import AddLeave from "@/views/Leave/Add.vue";
+import Leave from "@/views/Leave/index.vue";
+import Holiday from "@/views/Holiday/index.vue";
 
 
 import Store from './store';
@@ -31,7 +53,6 @@ const router =  new Router({
       path:'/dashboard',
       name:'dashboard',
       component:Dashboard
-      // beforeEnter: ifAuthenticated,
     },
     {
       path:'/login',
@@ -74,9 +95,119 @@ const router =  new Router({
       component:AddBank
     },
     {
+      path:'/banks',
+      name:'banks',
+      component:Bank
+    },
+    {
+      path:'/add-designation',
+      name:'add-designation',
+      component:AddDesignation
+    },
+    {
+      path:'/edit-designation',
+      name:'edit-designation',
+      component:EditDesignation
+    },
+    {
+      path:'/designations',
+      name:'designations',
+      component:Designation
+    },
+    {
+      path:'/add-department',
+      name:'add-department',
+      component:AddDepartment
+    },
+    {
+      path:'/adit-department',
+      name:'adit-department',
+      component:EditDepartment
+    },
+    {
+      path:'/departments',
+      name:'departments',
+      component:Department
+    },
+    {
+      path:'/add-leave',
+      name:'add-leave',
+      component:AddLeave
+      },
+      {
+        path:'/edit-leave',
+        name:'edit-leave',
+        component:EditLeave
+      },
+      {
+      path:'/leaves',
+      name:'leaves',
+      component:Leave
+      },
+    {
+      path:'/add-promotion',
+      name:'add-promotion',
+      component:AddPromotion
+    },
+    {
+      path:'/adit-promotion',
+      name:'adit-promotion',
+      component:EditPromotion
+    },
+    {
+      path:'/promotions',
+      name:'promotions',
+      component:Promotion
+    },
+    {
+      path:'/add-overtime',
+      name:'add-overtime',
+      component:AddOvertime
+    },
+    {
+      path:'/edit-overtime',
+      name:'edit-overtime',
+      component:EditOvertime
+    },
+    {
+      path:'/overtime',
+      name:'overtime',
+      component:Overtime
+    },
+    {
+      path:'/add-resignation',
+      name:'add-resignation',
+      component:AddResignation
+    },
+    {
+      path:'/resignations',
+      name:'resignations',
+      component:Resignation
+    },
+    {
+      path:'/add-termination',
+      name:'add-termination',
+      component:AddTermination
+    },
+    {
+      path:'/edit-termination',
+      name:'adit-termination',
+      component:EditTermination
+    },
+    {
+      path:'/terminations',
+      name:'terminations',
+      component:Termination
+    },
+    {
     path:'/profile',
     name:'profile',
     component:Profile
+    },
+    {
+      path:'/holidays',
+      name:'holidays',
+      component:Holiday
     },
     {
       path: '/about',
@@ -93,18 +224,18 @@ const router =  new Router({
   ]
 })
 
-const openRoutes = ["login", "register", "forgot-password", "add-employee","edit-employee", "add-bank", "edit-bank", "profile"]
+// const openRoutes = ["login", "register", "forgot-password", "add-employee","edit-employee", "add-bank", "edit-bank", "profile"]
 
-router.beforeEach((to, from, next) => {
-  // Store.dispatch('fetchAccessToken');
-  Store.dispatch('fetchAccessToken')
-  if (openRoutes.includes(to.name)) {
-    next()
-  } else if (Store.state.accessToken) {
-    next()
-  } else {
-    next("/login")
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   // Store.dispatch('fetchAccessToken');
+//   Store.dispatch('fetchAccessToken')
+//   if (openRoutes.includes(to.name)) {
+//     next()
+//   } else if (Store.state.accessToken) {
+//     next()
+//   } else {
+//     next("/login")
+//   }
+// });
 
 export default router;
