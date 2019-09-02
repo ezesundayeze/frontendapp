@@ -15,9 +15,13 @@
 							<h3 class="account-title">Register</h3>
 							
 							<!-- Account Form -->
-							<form action="index.html">
+							<form @submit.prevent="onSubmit">
 								<div class="form-group">
 									<label>Email</label>
+									<input class="form-control" type="text">
+								</div>
+								<div class="form-group">
+									<label>Company Username</label>
 									<input class="form-control" type="text">
 								</div>
 								<div class="form-group">

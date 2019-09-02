@@ -15,7 +15,11 @@
 							<p class="account-subtitle">Access to our dashboard</p>
 							
 							<!-- Account Form -->
-							<form action="index.html">
+							<form @submit.prevent="onSubmitLogin">
+								<div class="form-group">
+									<label>Company Username</label>
+									<input class="form-control" type="text">
+								</div>
 								<div class="form-group">
 									<label>Email Address</label>
 									<input class="form-control" type="text">
@@ -54,6 +58,11 @@
 <script>
 
 export default{
-    name:"Login"
+	name:"Login",
+	methods:{
+		onSubmitLogin(){
+			
+		}
+	}
 }
 </script>

@@ -46,8 +46,8 @@ const router =  new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'dashboard',
+      component: Dashboard
     },
     {
       path:'/dashboard',
