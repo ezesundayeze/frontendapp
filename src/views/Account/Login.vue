@@ -18,11 +18,11 @@
 							<form @submit.prevent="onSubmitLogin">
 								<div class="form-group">
 									<label>Company Username</label>
-									<input class="form-control" type="text">
+									<input class="form-control" v-model="username" type="text">
 								</div>
 								<div class="form-group">
 									<label>Email Address</label>
-									<input class="form-control" type="text">
+									<input v-model="email" class="form-control" type="text">
 								</div>
 								<div class="form-group">
 									<div class="row">
@@ -35,7 +35,7 @@
 											</router-link>
 										</div>
 									</div>
-									<input class="form-control" type="password">
+									<input class="form-control" v-model="password" type="password">
 								</div>
 								<div class="form-group text-center">
 									<button class="btn btn-primary account-btn" type="submit">Login</button>
@@ -56,11 +56,21 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
 
 export default{
 	name:"Login",
+	data:function(){
+		return {
+			username:'',
+			email:'',
+			password:''
+		}
+	},
 	methods:{
+		...mapActions(["doLogin"]),
 		onSubmitLogin(){
+			this.doLogin({username:this.username, email:this.email, password:this.password})
 			
 		}
 	}

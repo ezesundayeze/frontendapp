@@ -212,9 +212,11 @@ const router =  new Router({
     {
       path: '/about',
       name: 'about',
+      
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      // which is lazy-loaded when the route is visited
+
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
@@ -224,18 +226,18 @@ const router =  new Router({
   ]
 })
 
-// const openRoutes = ["login", "register", "forgot-password", "add-employee","edit-employee", "add-bank", "edit-bank", "profile"]
+const openRoutes = ["login", "register", "forgot-password", "add-employee","edit-employee", "add-bank", "edit-bank", "profile"]
 
-// router.beforeEach((to, from, next) => {
-//   // Store.dispatch('fetchAccessToken');
-//   Store.dispatch('fetchAccessToken')
-//   if (openRoutes.includes(to.name)) {
-//     next()
-//   } else if (Store.state.accessToken) {
-//     next()
-//   } else {
-//     next("/login")
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  // Store.dispatch('fetchAccessToken');
+  Store.dispatch('fetchAccessToken')
+  if (openRoutes.includes(to.name)) {
+    next()
+  } else if (Store.state.accessToken) {
+    next()
+  } else {
+    next("/login")
+  }
+});
 
 export default router;
